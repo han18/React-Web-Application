@@ -20,6 +20,7 @@ const App = () => {
         const data = await response.json();
         setFlags(data.results);
         setLoading(false);
+        console.log(data);
       } catch (error) {
         setError(error);
         setLoading(false);
@@ -40,7 +41,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>flags API</h1>
+      <h1>flags: {flags}</h1>
       <FlagList flag={flags} />
     </div>
   );

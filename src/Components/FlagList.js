@@ -9,7 +9,7 @@ function FlagList(props) {
       <div>
         {flagList.map((flag, index) => (
           <div key={index} className="items">
-            {flag.name.common}
+            {flag.flag}
           </div>
         ))}
       </div>
