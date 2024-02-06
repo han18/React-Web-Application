@@ -10,9 +10,7 @@ function App() {
     const fetchBooks = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(
-          "https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/9999999999999999/books"
-        );
+        const response = await fetch();
 
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -27,7 +25,19 @@ function App() {
         console.log(error);
       }
     };
+
+    fetchBooks();
   }, []);
+
+  console.log(books);
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>Error :(</h1>;
+  }
+
   return (
     <div className="App">
       <h1>This is a app</h1>
