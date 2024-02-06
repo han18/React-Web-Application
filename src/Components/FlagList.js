@@ -3,17 +3,18 @@ import React from "react";
 function FlagList(props) {
   const flagList = props.flags;
 
-
-
-  return <div>
+  return (
+    <div>
       <h1>FlagList</h1>
-      <div> 
-            {flagList.map((flag, index) => (
-                  <div key={index}>
-             </div>
-            )}
+      <div>
+        {flagList.map((flag, index) => (
+          <div key={index} className="items">
+            {flag.name.common}
+          </div>
+        ))}
       </div>
-  </div>;
+    </div>
+  );
 }
 
 export default FlagList;
