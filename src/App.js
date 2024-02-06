@@ -42,7 +42,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>flags: {flags}</h1>
-      <FlagList />
+      <FlagList flag={flags} />
     </div>
   );
 };
