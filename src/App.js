@@ -1,48 +1,50 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import FlagList from "./Components/FlagList";
 
-function App() {
-  const [books, setBooks] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+const App = () => {
+  const [flags, setFlags] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchBooks = async () => {
+    const fetchData = async () => {
       try {
-        setIsLoading(true);
-        const response = await fetch();
+        const response = await fetch("https://restcountries.com/v3.1/all");
+        console.log(response);
 
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
+
         const data = await response.json();
+        setFlags(data.results);
+        setLoading(false);
         console.log(data);
-        setBooks(data.items);
-        setIsLoading(false);
       } catch (error) {
         setError(error);
-        setIsLoading(false);
+        setLoading(false);
         console.log(error);
       }
     };
 
-    fetchBooks();
+    fetchData();
   }, []);
 
-  console.log(books);
-  if (isLoading) {
-    return <h1>Loading...</h1>;
+  if (loading) {
+    return <p>Loading...</p>;
   }
 
   if (error) {
-    return <h1>Error :(</h1>;
+    return <p>Error: {error.message}</p>;
   }
 
   return (
     <div className="App">
-      <h1>This is a app</h1>
+      <h1>flags: {flags}</h1>
+      <FlagList />
     </div>
   );
-}
+};
 
 export default App;
