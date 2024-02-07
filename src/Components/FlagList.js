@@ -9,12 +9,13 @@ function FlagList(props) {
     <div>
       <div className="container">
         {flagList.map((flags, index) => (
-          <div key={index} className="items">
-            <div className="items">
+          <div key={index}>
+            <div>
               {" "}
               <h1>{flags.flag}</h1>
               <br />
             </div>
+            <div>{flags.name.common}</div>
           </div>
         ))}
       </div>
