@@ -8,11 +8,14 @@ function FlagList(props) {
       <div className="container">
         {flagList.map((flags, index) => (
           <div key={index} className="items">
-            {flags.flag}
+            <div className="items">
+              {" "}
+              {flags.flag}
+              <br />
+            </div>
           </div>
         ))}
       </div>
-      console.log(flagList);
     </div>
   );
 }
