@@ -13,6 +13,7 @@ function FlagList(props) {
               {flags.flag}
               <br />
             </div>
+            <p>{flags.name.common}</p>
           </div>
         ))}
       </div>

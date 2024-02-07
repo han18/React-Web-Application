@@ -12,6 +12,7 @@ const App = () => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
+        console.log(response);
         const data = await response.json();
         setCountries(data);
       } catch (error) {
