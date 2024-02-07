@@ -5,10 +5,10 @@ function FlagList(props) {
 
   return (
     <div>
-      <div>
+      <div className="container">
         {flagList.map((flags, index) => (
           <div key={index} className="items">
-            {flags.name.common}
+            {flags.flag}
           </div>
         ))}
       </div>
