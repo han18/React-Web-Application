@@ -1,4 +1,4 @@
-/* .App {
+.App {
   text-align: center;
 }
 
@@ -11,11 +11,14 @@
 }
 
 /* Add some padding inside the card container */
-/* .container div {
+.container div {
   width: 150px;
   height: 100px;
 }
 
 .items {
-  font-size: 1rem;
-} */
+  /* font-size: 1.rem; */
+}
+p {
+  font-size: 0.1;
+}

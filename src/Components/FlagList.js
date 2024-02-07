@@ -6,17 +6,19 @@ function FlagList(props) {
   const flagList = props.flag;
 
   return (
-    <div className="container">
-      {flagList.map((flags, index) => (
-        <Card key={index} className="mb-3">
-          <Card.Body>
-            <div className="d-flex justify-content-center align-items-center">
-              <div className="mr-1">{flags.flag}</div>
-              <p className="mb-">{flags.name.common}</p>
+    <div>
+      <div className="container">
+        {flagList.map((flags, index) => (
+          <div key={index} className="items">
+            <div className="items">
+              {" "}
+              {flags.flag}
+              <br />
             </div>
-          </Card.Body>
-        </Card>
-      ))}
+            <p>{flags.name.common}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -37,3 +39,5 @@ export default FlagList;
 //         console.log(flagList);
 //       </div>
 //     </div>
+
+// this is the second code before separating the the flag .map
