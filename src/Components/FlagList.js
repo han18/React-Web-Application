@@ -12,10 +12,9 @@ function FlagList(props) {
           <div key={index} className="items">
             <div className="items">
               {" "}
-              {flags.flag}
+              <h1>{flags.flag}</h1>
               <br />
             </div>
-            <p>{flags.name.common}</p>
           </div>
         ))}
       </div>
@@ -41,3 +40,21 @@ export default FlagList;
 //     </div>
 
 // this is the second code before separating the the flag .map
+
+// return (
+//       <div>
+//         <div className="container">
+//           {flagList.map((flags, index) => (
+//             <div key={index} className="items">
+//               <div className="items">
+//                 {" "}
+//                 {flags.flag}
+//                 <br />
+//               </div>
+//               <p>{flags.name.common}</p>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     );
+//   }

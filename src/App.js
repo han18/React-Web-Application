@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import FlagList from "./Components/FlagList";
+import Header from "./Components/Header";
 
 const App = () => {
   const [countries, setCountries] = useState([]);
@@ -25,7 +26,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Country List</h1>
+      <Header />
       <FlagList flag={countries} />
     </div>
   );
