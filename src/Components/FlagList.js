@@ -1,24 +1,31 @@
+// import "../style.css";
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
-import Card from "react-bootstrap/Card";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function FlagList(props) {
   const flagList = props.flag;
 
   return (
-    <div>
-      <div className="container">
-        {flagList.map((flags, index) => (
-          <div key={index}>
-            <div>
-              {" "}
-              <h1>{flags.flag}</h1>
-              <br />
+    <div className="container">
+      {flagList.map((country, index) => (
+        <div class="container py-5">
+          <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h1 class="card-text">{country.flag}</h1>
+                  <h5 class="card-title">{country.name.common}</h5>
+                </div>
+                <div class="mb-5 d-flex justify-content-around">
+                  <h3>Population: {country.population}</h3>
+                  <br></br>
+                  <button class="btn btn-primary">More Info</button>
+                </div>
+              </div>
             </div>
-            <div>{flags.name.common}</div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 }

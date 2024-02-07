@@ -1,4 +1,6 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import { useState, useEffect } from "react";
 import FlagList from "./Components/FlagList";
 import Header from "./Components/Header";
@@ -11,7 +13,7 @@ const App = () => {
       try {
         const response = await fetch("https://restcountries.com/v3.1/all");
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("There was a problem with the fetch");
         }
         console.log(response);
         const data = await response.json();
@@ -22,7 +24,7 @@ const App = () => {
     };
 
     fetchData();
-  }, []); // Empty dependency array ensures useEffect runs only once on mount
+  }, []);
 
   return (
     <div>
